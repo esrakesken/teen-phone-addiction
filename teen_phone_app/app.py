@@ -18,7 +18,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib
 import numpy as np
 
-df = pd.read_csv(r"C:\Users\esrak\Downloads\teen_phone_addiction_dataset.csv")
+df = pd.read_csv("data\teen_phone_addiction_dataset.csv")
 
 selected_features = [
     'Daily_Usage_Hours',
@@ -155,4 +155,5 @@ st.markdown(
     to predict smartphone addiction level on a 0–10 scale.  
     This tool is designed for educational awareness — not for clinical diagnosis.
     """
+
 )
