@@ -1,16 +1,3 @@
-selected_features = [
-    'Daily_Usage_Hours',
-    'Apps_Used_Daily',
-    'Time_on_Social_Media',
-    'Time_on_Gaming',
-    'Phone_Checks_Per_Day',
-    'Sleep_Hours',
-    'Weekend_Usage_Hours',
-    'Academic_Performance',
-    'Exercise_Hours',
-    'Parental_Control'
-]
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
@@ -131,21 +118,24 @@ if st.sidebar.button("Predict Addiction Level"):
         st.error("🚨 High Risk of Addiction — Signs of digital overuse detected!")
 
     st.markdown("---")
-
-    # Feature Importance Plot (using model information)
+    
+    #Histogram adddiction level and prediction level
     try:
-        importances = model.feature_importances_
-        feature_names = input_data.columns
-        
-        sorted_idx = np.argsort(importances)
-        plt.figure(figsize=(6,4))
-        plt.barh(range(len(sorted_idx)), importances[sorted_idx], color='#1f77b4')
-        plt.yticks(range(len(sorted_idx)), feature_names[sorted_idx])
-        plt.xlabel("Feature Importance")
-        plt.title("Most Influential Factors on Addiction Prediction")
+        data = pd.read_csv("teen_phone_app/teen_phone_addiction_dataset.csv") 
+        addiction_values = data["Addiction_Level"]
+
+        plt.figure(figsize=(7,4))
+        plt.hist(addiction_values, bins=20, color="#1b1f6d", alpha=0.7, edgecolor='black')
+        plt.axvline(prediction, color='red', linestyle='--', linewidth=2,
+                    label=f"Your Prediction: {prediction:.2f}")
+        plt.title("Distribution of Addiction Levels")
+        plt.xlabel("Addiction Level (0–10)")
+        plt.ylabel("Number of Individuals")
+        plt.legend()
         st.pyplot(plt)
-    except:
-        st.info("Feature importance is not available for this model type.")
+
+    except Exception as e:
+        st.info(f"Couldn't load histogram data: {e}")
 
 st.markdown( 
     """
@@ -157,5 +147,6 @@ st.markdown(
     """
 
 )
+
 
 
