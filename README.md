@@ -1,5 +1,7 @@
 # 📱 Teen Smartphone Addiction Predictor
 
+> This app is part of my final project for the IT Academy Data Analytics course (Barcelona Activa). The full analysis, the Power BI dashboard and the presentation are in [it_academy_barcelona_activa](https://github.com/esrakesken/it_academy_barcelona_activa/tree/main/Lifestyle_Factors_on_Teen_Phone_Addiction).
+
 An interactive web app that estimates a teenager's **smartphone addiction level on a 0–10 scale** from ten daily habits: screen time, social media, gaming, sleep, exercise and more.
 
 🌐 **Live app:** [teenphone-addiction.streamlit.app](https://teenphone-addiction.streamlit.app/)
