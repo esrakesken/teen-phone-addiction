@@ -105,8 +105,8 @@ On average the prediction is about a third of a point away from the real level, 
 ## Run it locally
 
 ```bash
-git clone https://github.com/esrakesken/teen_phone_addiction_app.git
-cd teen_phone_addiction_app
+git clone https://github.com/esrakesken/teen-phone-addiction.git
+cd teen-phone-addiction
 pip install -r teen_phone_app/requirements.txt
 streamlit run teen_phone_app/app.py
 ```
@@ -116,7 +116,7 @@ Run the commands from the repository root: the app reads the data from `teen_pho
 ## Project structure
 
 ```
-teen_phone_addiction_app/
+teen-phone-addiction/
 ├── README.md
 ├── notebooks/
 │   ├── 01_eda_analysis.ipynb               # exploratory analysis
